@@ -80,7 +80,7 @@ footer {
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
-        <h1>Bienvenidos al Hotel Ejemplo</h1>
+        <h1>Bienvenidos al Hotel SENATI</h1>
     </header>
 
     <section id="inicio" class="banner">
