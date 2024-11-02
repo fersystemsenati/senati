@@ -1,7 +1,7 @@
 <?php
 header("Content-Type: application/json");
 include 'config.php';
-
+echo "consultando";
 // Método POST para registrar un cliente
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = json_decode(file_get_contents("php://input"), true);
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // Método GET para obtener la lista de clientes
 } elseif ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    echo "consultando";
+
     $result = $conn->query("SELECT id, nombre, lugar FROM cliente");
 
     if ($result->num_rows > 0) {
