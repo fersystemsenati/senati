@@ -72,7 +72,7 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#inicio">-Inicio-</a></li>
                 <li><a href="#habitaciones">Habitaciones</a></li>
                 <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#ubicacion">Ubicación</a></li>
