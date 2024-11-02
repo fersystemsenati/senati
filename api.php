@@ -1,6 +1,6 @@
 <?php
 header("Content-Type: application/json");
-echo "consultando";
+//echo "consultando";
 include 'config.php';
 
 // Método POST para registrar un cliente
