@@ -1,65 +1,64 @@
 <style>
     body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
+    header {
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
 
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
 
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
+    nav ul li {
+        display: inline;
+        margin-right: 20px;
+    }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+    }
 
-.banner {
-    background-image: url('hotel.jpg');
-    background-size: cover;
-    color: white;
-    padding: 100px 0;
-    text-align: center;
-}
+    .banner {
+        background-image: url('hotel.jpg');
+        background-size: cover;
+        color: white;
+        padding: 100px 0;
+        text-align: center;
+    }
 
-.banner h2 {
-    font-size: 48px;
-}
+    .banner h2 {
+        font-size: 48px;
+    }
 
-.room-container {
-    display: flex;
-    justify-content: space-around;
-    margin: 20px;
-}
+    .room-container {
+        display: flex;
+        justify-content: space-around;
+        margin: 20px;
+    }
 
-.room {
-    text-align: center;
-}
+    .room {
+        text-align: center;
+    }
 
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
+    footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+    }
 </style>
 <!DOCTYPE html>
 <html lang="es">
@@ -78,6 +77,7 @@ footer {
                 <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#ubicacion">Ubicación</a></li>
                 <li><a href="#contacto">Contacto</a></li>
+                <li><a href="cliente.php">Cliente</a></li> <!-- Opción agregada -->
             </ul>
         </nav>
         <h1>Bienvenidos al Hotel SENATI</h1>
@@ -146,10 +146,10 @@ footer {
     <script src="script.js"></script>
 </body>
 </html>
+
 <script>
     document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    alert('Formulario enviado. Nos pondremos en contacto contigo pronto.');
-});
-
+        event.preventDefault();
+        alert('Formulario enviado. Nos pondremos en contacto contigo pronto.');
+    });
 </script>
