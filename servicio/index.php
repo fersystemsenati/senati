@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// Obtener asistencias
+// Obtener asistencias   ..
 $asistencias = $asistenciaService->obtenerAsistencias();
 ?>
 

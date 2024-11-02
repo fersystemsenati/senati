@@ -10,6 +10,7 @@ $hostname = "misventas01.mysql.database.azure.com";
     $username = "azuremysqlsenati";
     $password = "Senati2024";
     $database = "ventas2024";
+    
 */
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
