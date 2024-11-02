@@ -1,5 +1,6 @@
 <?php
-require_once '../config/database.php';
+//require_once '../config/database.php';
+require_once 'database.php';
 
 class AsistenciaService {
     public function crearAsistencia($usuario_id, $fecha, $hora_entrada, $estado) {

@@ -1,5 +1,6 @@
 <?php
-require_once '../servicio/AsistenciaService.php';
+//require_once '../servicio/AsistenciaService.php';
+require_once 'AsistenciaService.php';
 
 $asistenciaService = new AsistenciaService();
 
