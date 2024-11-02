@@ -1,43 +1,37 @@
 <?php
 header("Content-Type: application/json");
-//echo "consultando";
 include 'config.php';
 
-// Método POST para registrar un cliente
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $data = json_decode(file_get_contents("php://input"), true);
-    $nombre = $data['nombre'] ?? '';
-    $lugar = $data['lugar'] ?? '';
+switch ($_SERVER['REQUEST_METHOD']) {
+    case 'POST':
+        $nombre = $_POST['nombre'] ?? null;
+        $lugar = $_POST['lugar'] ?? null;
 
-    if ($nombre && $lugar) {
-        $stmt = $conn->prepare("INSERT INTO cliente (nombre, lugar) VALUES (?, ?)");
-        $stmt->bind_param("ss", $nombre, $lugar);
+        if ($nombre && $lugar) {
+            $stmt = $conn->prepare("INSERT INTO cliente (nombre, lugar) VALUES (?, ?)");
+            $stmt->bind_param("ss", $nombre, $lugar);
 
-        if ($stmt->execute()) {
-            echo json_encode(["message" => "Nuevo registro creado exitosamente."]);
+            $response = $stmt->execute()
+                ? ["message" => "Nuevo registro creado exitosamente."]
+                : ["error" => "Error: " . $stmt->error];
+
+            $stmt->close();
         } else {
-            echo json_encode(["error" => "Error: " . $stmt->error]);
+            $response = ["error" => "Datos incompletos."];
         }
+        echo json_encode($response);
+        break;
 
-        $stmt->close();
-    } else {
-        echo json_encode(["error" => "Datos incompletos."]);
-    }
+    case 'GET':
+        $result = $conn->query("SELECT id, nombre, lugar FROM cliente");
+        $clientes = $result->fetch_all(MYSQLI_ASSOC);
+        
+        echo json_encode($clientes ?: ["message" => "No hay resultados."]);
+        break;
 
-// Método GET para obtener la lista de clientes
-} elseif ($_SERVER['REQUEST_METHOD'] === 'GET') {
-
-    $result = $conn->query("SELECT id, nombre, lugar FROM cliente");
-
-    if ($result->num_rows > 0) {
-        $clientes = [];
-        while ($row = $result->fetch_assoc()) {
-            $clientes[] = $row;
-        }
-        echo json_encode($clientes);
-    } else {
-        echo json_encode(["message" => "No hay resultados."]);
-    }
+    default:
+        echo json_encode(["error" => "Método no soportado"]);
+        break;
 }
 
 $conn->close();
